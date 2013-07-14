@@ -4,17 +4,22 @@ var Tale = require('../models/tale');
 
 module.exports = function(app){
 
+  // Get all the tales.
   app.get('/tales', function(req, res) {
 
-    Tale.find(function (err, tales) {
-      if (err) {
-        res.send('cant find tales');
-      } else {
-        res.send(tales);
-      }
-    });
+    Tale.find()
+      .select('_id title')
+      .sort('title')
+      .exec(function (err, tales) {
+        if (err) {
+          res.send('cant find tales');
+        } else {
+          res.send(tales);
+        }
+      });
   });
 
+  // Make a new tale.
   app.post('/tales', function(req, res) {
 
     var tale = new Tale({
@@ -31,6 +36,7 @@ module.exports = function(app){
     });
   });
 
+  // Get a particular tale.
   app.get('/tales/:id', function(req, res) {
 
     Tale.findById(req.params.id, function(err, tale) {
@@ -42,7 +48,7 @@ module.exports = function(app){
     });
   });
 
-
+  // Add a new phrase to a tale.
   app.put('/tales/:id', function(req, res) {
 
     Tale.findByIdAndUpdate(req.params.id, { $push: { phrases : { text: req.body.text } }},

@@ -1,9 +1,9 @@
-<p>This is the tale view.</p>
-<p>title: {{tale.title}}</p>
+<h2>{{tale.title}}</h2>
 <br/>
 <span ng-repeat="phrase in tale.phrases">{{phrase.text}} </span>
 <br/>
 <br/>
+<label>Add a new phrase to this tale</label>
 <textarea ng-model="newPhrase.text"></textarea>
 <br/>
 <button ng-click="add()">Add</button>
