@@ -45,14 +45,14 @@ module.exports = function(app){
 
   app.put('/tales/:id', function(req, res) {
 
-    Tale.update({_id: req.params.id }, { $push: { phrases : { text: req.body.text } }},
-          function(err) {
-            if (err) {
-              res.send('error updating');
-            } else {
-              res.send('success');
-            }
-          });
+    Tale.findByIdAndUpdate(req.params.id, { $push: { phrases : { text: req.body.text } }},
+      function (err, tale) {
+        if (err) {
+          res.send('error updating');
+        } else {
+          res.send(tale);
+        }
+      });
   });
 
 };

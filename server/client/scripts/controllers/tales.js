@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('SmallTalesApp')
-  .controller('TalesCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('TalesCtrl', function ($scope, Tales) {
+
+    $scope.tales = Tales.query();
   });

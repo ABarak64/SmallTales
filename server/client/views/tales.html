@@ -1,1 +1,8 @@
 <p>This is the tales view.</p>
+<p>Here are the tales:</p>
+<ul>
+	<li ng-repeat="tale in tales">
+		<a href="#/tale/{{tale._id}}">{{tale.title}}</a>
+	</li>
+
+</ul>

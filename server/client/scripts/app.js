@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SmallTalesApp', [])
+angular.module('SmallTalesApp', ['smallTalesServices'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -14,6 +14,14 @@ angular.module('SmallTalesApp', [])
       .when('/tales', {
         templateUrl: 'views/tales.html',
         controller: 'TalesCtrl'
+      })
+      .when('/newtale', {
+        templateUrl: 'views/newtale.html',
+        controller: 'NewTaleCtrl'
+      })
+      .when('/tale/:taleId', {
+        templateUrl: 'views/tale.html',
+        controller: 'TaleCtrl'
       })
       .otherwise({
         redirectTo: '/'
