@@ -8,7 +8,7 @@ module.exports = function(app){
   app.get('/tales', function(req, res) {
 
     Tale.find()
-      .select('_id title')
+      .select('_id title updatedDate')
       .sort('title')
       .exec(function (err, tales) {
         if (err) {
@@ -51,7 +51,7 @@ module.exports = function(app){
   // Add a new phrase to a tale.
   app.put('/tales/:id', function(req, res) {
 
-    Tale.findByIdAndUpdate(req.params.id, { $push: { phrases : { text: req.body.text } }},
+    Tale.findByIdAndUpdate(req.params.id, { $push: { phrases : { text: req.body.text } }, updatedDate: new Date() },
       function (err, tale) {
         if (err) {
           res.send('error updating');

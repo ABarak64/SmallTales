@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SmallTalesApp', ['smallTalesServices'])
+angular.module('SmallTalesApp', ['smallTalesDirectives', 'smallTalesServices'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

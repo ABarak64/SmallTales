@@ -1,7 +1,7 @@
 <h2>Read and contribute to some of our tales</h2>
 <ul>
 	<li ng-repeat="tale in tales">
-		<a href="#/tale/{{tale._id}}">{{tale.title}}</a>
+		<tale-summary tale=tale></tale-summary>
 	</li>
 
 </ul>
