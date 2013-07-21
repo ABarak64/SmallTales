@@ -19,6 +19,22 @@ module.exports = function(app){
       });
   });
 
+  // Get updated tales.
+  app.get('/tales/updated/:count', function(req, res) {
+
+    Tale.find()
+      .select('_id title updatedDate')
+      .sort('-updatedDate')
+      .limit(req.params.count)
+      .exec(function (err, tales) {
+        if (err) {
+          res.send('cant find tales');
+        } else {
+          res.send(tales);
+        }
+      });
+  });
+
   // Make a new tale.
   app.post('/tales', function(req, res) {
 

@@ -1,8 +1,12 @@
 'use strict';
 
-app.factory('Tales', function($resource) {
+app.factory('Tales', function($resource, $http) {
 
-  return $resource('tales/:taleId', {taleId:'@id'},
+  var service = $resource('tales/:taleId', {taleId:'@id'},
     { update: { method: 'PUT' }}
   );
+  service.getUpdated = function(count) {
+    return $http.get('tales/updated/' + count);
+  };
+  return service;
 });

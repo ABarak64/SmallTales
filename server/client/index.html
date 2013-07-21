@@ -32,10 +32,17 @@
     <a href="#/tales">Tales</a>
     <a href="#/newtale">New Tale</a>
     <div class="container" ng-view></div>
+    <div ng-controller="UpdatedTalesCtrl">
+      <h2>Recently Updated</h2>
+      <ul>
+        <li ng-repeat="tale in tales">
+          <tale-summary tale=tale time=currentTime></tale-summary>
+        </li>
+      </ul>
+    </div>
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
-    <script src="components/angular-cookies/angular-cookies.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
@@ -44,6 +51,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/intro.js"></script>
     <script src="scripts/controllers/tales.js"></script>
+    <script src="scripts/controllers/updatedTales.js"></script>
     <script src="scripts/controllers/tale.js"></script>
     <script src="scripts/controllers/newtale.js"></script>
     <script src="scripts/services/serverTime.js"></script>
