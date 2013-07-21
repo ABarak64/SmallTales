@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('SmallTalesApp')
-  .controller('TalesCtrl', function ($scope, Tales) {
+app.controller('TalesCtrl', function ($scope, ServerTime, Tales) {
 
-    $scope.tales = Tales.query();
+  ServerTime.get().success(function(data) {
+    $scope.currentTime = data.time;
   });
+  $scope.tales = Tales.query();
+});

@@ -32,6 +32,9 @@ var SampleApp = function() {
 
         self.app.use(express.static(path.join(__dirname, './client')));
         require('./routes/tale')(self.app);
+        self.app.get('/time', function(req, res) {
+          res.send({ time: new Date() });
+        });
       };
 
     self.initialize = function() {

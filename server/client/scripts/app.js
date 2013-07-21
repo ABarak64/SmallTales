@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('SmallTalesApp', ['smallTalesDirectives', 'smallTalesServices'])
-  .config(function ($routeProvider) {
+var app = angular.module('smallTalesApp', ['ngResource']);
+
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
