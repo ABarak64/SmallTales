@@ -16,8 +16,8 @@ app.controller('UpdatedTalesCtrl', function ($scope, $timeout, ServerTime, Tales
 
   $scope.onTimeout = function(){
     update();
-    mytimeout = $timeout($scope.onTimeout,1000 * 60 * 5);
+    mytimeout = $timeout($scope.onTimeout,1000 * 60 * 1);
   };
-  var mytimeout = $timeout($scope.onTimeout,1000 * 60 * 5);
+  var mytimeout = $timeout($scope.onTimeout,1000 * 60 * 1);
 
 });

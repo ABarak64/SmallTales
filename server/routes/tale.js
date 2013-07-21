@@ -1,80 +1,43 @@
 'use strict';
 
-var Tale = require('../models/tale');
+var CachedManager = require('../bll/cachedTalesManager');
+var talesManager = new CachedManager();
 
 module.exports = function(app){
 
   // Get all the tales.
   app.get('/tales', function(req, res) {
-
-    Tale.find()
-      .select('_id title updatedDate')
-      .sort('title')
-      .exec(function (err, tales) {
-        if (err) {
-          res.send('cant find tales');
-        } else {
-          res.send(tales);
-        }
-      });
+    talesManager.getTales(function(data) {
+      res.send(data);
+    });
   });
 
   // Get updated tales.
   app.get('/tales/updated/:count', function(req, res) {
-
-    Tale.find()
-      .select('_id title updatedDate')
-      .sort('-updatedDate')
-      .limit(req.params.count)
-      .exec(function (err, tales) {
-        if (err) {
-          res.send('cant find tales');
-        } else {
-          res.send(tales);
-        }
-      });
+    talesManager.getUpdatedTales(req.params.count, function(data) {
+      res.send(data);
+    });
   });
 
   // Make a new tale.
   app.post('/tales', function(req, res) {
-
-    var tale = new Tale({
-      title: req.body.title,
-      phrases: [ { text: req.body.text } ]
-    });
-
-    tale.save(function(err) {
-      if (err) {
-        res.send('there was an error');
-      } else {
-        res.send('success');
-      }
+    talesManager.addTale({ title: req.body.title, text: req.body.text }, function(data) {
+      res.send(data);
     });
   });
 
   // Get a particular tale.
   app.get('/tales/:id', function(req, res) {
-
-    Tale.findById(req.params.id, function(err, tale) {
-      if (err) {
-        res.send('cant find tale');
-      } else {
-        res.send(tale);
-      }
+    talesManager.getTale(req.params.id, function(data) {
+      res.send(data);
     });
   });
 
   // Add a new phrase to a tale.
   app.put('/tales/:id', function(req, res) {
-
-    Tale.findByIdAndUpdate(req.params.id, { $push: { phrases : { text: req.body.text } }, updatedDate: new Date() },
-      function (err, tale) {
-        if (err) {
-          res.send('error updating');
-        } else {
-          res.send(tale);
-        }
-      });
+    talesManager.updateTale({ id: req.params.id, text: req.body.text }, function(data) {
+      res.send(data);
+    });
   });
 
 };
