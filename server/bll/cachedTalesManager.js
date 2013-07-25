@@ -12,7 +12,6 @@ CachedTalesManager.prototype = new Manager();
 CachedTalesManager.prototype.getUpdatedTales = function(count, callback) {
   var self = this;
   if (new Date().getTime() - this.cacheUpdatedDate.getTime() > 1000 * 60 * 3) {
-  	console.log('refreshing data');
     Manager.prototype.getUpdatedTales(count, function(data) {
       self.updatedTalesCache = data;
       self.cacheUpdatedDate = new Date();

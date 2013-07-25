@@ -1,8 +1,9 @@
 <h2>Create a new tale</h2>
-
-<label>Title</label>
-<input type="text" ng-model="tale.title">
-<label>First Phrase</label>
-<textarea ng-model="tale.text"></textarea>
-<br/>
-<button ng-click="create()">Create</button>
+<form name="newTaleForm">
+  <label>Title</label>
+  <input type="text" ng-model="tale.title" placeholder="Enter a title" required/>
+  <label>First Phrase</label>
+  <textarea ng-model="tale.text" placeholder="Enter a sentence or two" required></textarea>
+  <br/>
+  <button ng-disabled="newTaleForm.$invalid" ng-click="create()">Create</button>
+</form>

@@ -3,7 +3,12 @@
 <span ng-repeat="phrase in tale.phrases">{{phrase.text}} </span>
 <br/>
 <br/>
-<label>Add a new phrase to this tale</label>
-<textarea ng-model="newPhrase.text"></textarea>
-<br/>
-<button ng-click="add()">Add</button>
+<form name="updateTaleForm">
+  <label>Add a new phrase to this tale</label>
+  <textarea ng-model="newPhrase.text" placeholder="Enter a sentence or two" required></textarea>
+  <br/>
+  <input type="checkbox" ng-model="newPhrase.isNewParagraph"> Start a new paragraph</input>
+  <br/>
+  <br/>
+  <button ng-disabled="updateTaleForm.$invalid" ng-click="add()">Add</button>
+</form>
