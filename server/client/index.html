@@ -11,7 +11,9 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -26,19 +28,27 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <h1>Small Tales</h1>
-    <a href="#">Home</a>
-    <a href="#/intro">Introduction</a>
-    <a href="#/tales">Tales</a>
-    <a href="#/newtale">New Tale</a>
-    <div class="container" ng-view></div>
-    <div ng-controller="UpdatedTalesCtrl">
-      <h2>Recently Updated</h2>
-      <ul>
-        <li ng-repeat="tale in tales">
-          <tale-summary tale=tale time=currentTime></tale-summary>
-        </li>
-      </ul>
+    
+    <div class="container">
+      <div class="row">
+        <h1>Small Tales</h1>
+        <a href="#">Home</a>
+        <a href="#/intro">Introduction</a>
+        <a href="#/tales">Tales</a>
+        <a href="#/newtale">New Tale</a>
+      </div>
+      <div class="row">
+        <div class="span7 offset1" ng-view>
+        </div>
+        <div class="span4" ng-controller="UpdatedTalesCtrl">
+          <h2>Updated</h2>
+          <ul>
+            <li ng-repeat="tale in tales">
+              <tale-summary tale=tale time=currentTime></tale-summary>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script src="components/angular/angular.js"></script>
@@ -58,9 +68,12 @@
     <script src="scripts/services/tales.js"></script>
     <!-- endbuild -->
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      var _gaq=[['_setAccount','SmallTales'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));

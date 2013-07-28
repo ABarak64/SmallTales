@@ -1,0 +1,45 @@
+
+@media only screen and (max-width: 980px) {
+  h1
+  {
+  	font-size: 800%;
+  }
+}
+
+@media only screen and (max-width: 586px) {
+  h1
+  {
+  	font-size: 400%;
+  }
+}
+
+@media only screen and (min-width: 980px)  {
+  h1
+  {
+  	font-size: 1150%;
+  }
+} 
+
+p, span
+{
+	font-family: "Georgia";
+	font-size: 24px;
+	line-height: 36px;
+	color: #37302A;
+}
+
+h1, h2
+{
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+	color: #F43C12;
+	font-family: 'Oswald', sans-serif;
+    text-rendering: optimizelegibility;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2
+{
+	font-size: 350%;
+}
