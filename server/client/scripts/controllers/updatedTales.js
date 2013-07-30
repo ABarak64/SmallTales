@@ -2,13 +2,13 @@
 
 app.controller('UpdatedTalesCtrl', function ($scope, $timeout, ServerTime, Tales) {
 
-  ServerTime.get().success(function(data) {
-    $scope.currentTime = data.time;
-  });
-
   var update = function() {
-    Tales.getUpdated(5).success(function(data) {
-      $scope.tales = data;
+    ServerTime.get().then(function(promise) {
+      $scope.currentTime = promise.data.time;
+    }).then(function() {
+      return Tales.getUpdated(5);
+    }).then(function(promise) {
+      $scope.tales = promise.data;
     });
   };
 
