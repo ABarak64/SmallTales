@@ -1,7 +1,7 @@
 'use strict';
 
 var CachedManager = require('../bll/cachedTalesManager');
-var talesManager = new CachedManager();
+var talesManager = new CachedManager(1000 * 60 * 1);
 
 module.exports = function(app){
 
