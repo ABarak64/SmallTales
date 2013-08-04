@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive-nav.css">
     <!-- endbuild -->
   </head>
   <body ng-app="smallTalesApp">
@@ -29,27 +30,41 @@
 
     <!-- Add your site or application content here -->
     
-    <div class="container">
-      <div class="row">
-        <h1>Small Tales</h1>
-        <a href="#">Home</a>
-        <a href="#/intro">Introduction</a>
-        <a href="#/tales">Tales</a>
-        <a href="#/newtale">New Tale</a>
-      </div>
-      <div class="row">
-        <div class="span7 offset1" ng-view>
+    <div id="wrap">
+      <div id="main" class="container-fluid">
+        <div class="row-fluid banner">
+          <div id="nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#/intro">Introduction</a></li>
+              <li><a href="#/tales">Tales</a></li>
+              <li><a href="#/newtale">New Tale</a></li>
+            </ul>
+          </div>
+          <h1>Small Tales</h1>
         </div>
-        <div class="span4" ng-controller="UpdatedTalesCtrl">
-          <h2>Updated</h2>
-          <ul>
-            <li ng-repeat="tale in tales">
-              <tale-summary tale=tale time=currentTime></tale-summary>
-            </li>
-          </ul>
+        <div class="row-fluid">
+          <div class="span6 offset2" ng-view>
+          </div>
+          <div class="span3" ng-controller="UpdatedTalesCtrl">
+            <h2>Updated</h2>
+            <ul>
+              <li ng-repeat="tale in tales">
+                <tale-summary tale=tale time=currentTime></tale-summary>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="push"></div>
+    </div>
+      <div id="footer">
+        <div class="container-fluid">
+          <p>Website created by Adam Barak. Source code available here.</p>
         </div>
       </div>
     </div>
+  
 
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
@@ -70,6 +85,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/responsive-nav.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -77,6 +93,9 @@
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <script>
+      var navigation = responsiveNav("#nav");
     </script>
   </body>
 </html>

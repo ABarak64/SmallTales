@@ -1,0 +1,98 @@
+/*! responsive-nav.js v1.0.15 by @viljamis */
+
+#nav {
+  margin-top: 20px;
+  font-family: 'Oswald', sans-serif;
+  list-style: none;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+#nav a {
+    color: white;
+}
+
+.js #nav {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#nav.opened {
+  max-height: 9999px;
+}
+
+
+@media screen and (max-width: 39.9999999999em) {
+  #nav, #nav ul {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #nav li {
+      display: block;
+      float: left;
+      width: 100%;
+  }
+
+  #nav a {
+      background: none repeat scroll 0 0 #F43C12;
+      border-bottom: 1px solid white;
+      float: left;
+      font-size: 112.5%;
+      font-weight: 400;
+      letter-spacing: 2px;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 100%;
+      font-size: 60%;
+  }
+
+  #nav-toggle {
+    -moz-user-select: none;
+    background: url("../images/toggler.gif") no-repeat scroll 50% 33% #F43C12;
+    display: block;
+    /*float: right;*/
+    height: 55px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 70px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .js #nav {
+    position: relative;
+  }
+  .js #nav.closed {
+    max-height: none;
+  }
+  #nav-toggle {
+    display: none;
+  }
+
+  #nav ul li {
+      display: inline;
+  }
+
+  #nav a {
+      margin: 1em;
+  }
+
+
+  #nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+    text-align: center;
+  }
+}
