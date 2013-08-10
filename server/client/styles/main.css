@@ -1,11 +1,16 @@
 @media only screen and (max-width: 480px) {
   h1 {
     font-size: 400%;
-    margin-top: 0.8em;
+    margin-top: 0.35em;
   }
 
   h2 {
     font-size: 200%;
+  }
+
+  p, span {
+    font-size: 14px;
+    line-height: 18px;
   }
 
   #footer p {
@@ -20,11 +25,16 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   h1 {
     font-size: 600%;
-    margin-top: 1.0em;
+    margin-top: 0.8em;
   }
 
   h2 {
     font-size: 250%;
+  }
+
+  p, span {
+    font-size: 16px;
+    line-height: 20px;
   }
 
   #footer p {
@@ -47,6 +57,11 @@
     font-size: 280%;
   }
 
+  p, span {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
   #footer p {
     font-size: 110%;
   }
@@ -67,6 +82,11 @@
     font-size: 350%;
   }
 
+  p, span {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
   #footer p {
     font-size: 110%;
   }
@@ -76,8 +96,10 @@
   }
 }
 
+/* regardless of window size */
+
 #footer {
-  background-color: #F43C12;
+  background-color: #AD85FF;
 }
 
 #footer p {
@@ -89,8 +111,6 @@
 
 p, span {
 	font-family: "Georgia";
-	font-size: 24px;
-	line-height: 36px;
 	color: #37302A;
 }
 
@@ -103,22 +123,51 @@ h2 {
 }
 
 h1, h2 {
-    letter-spacing: -0.04em;
-	color: #F43C12;
+  letter-spacing: -0.04em;
+	color: #AD85FF;
 	font-family: 'Oswald', sans-serif;
-    text-rendering: optimizelegibility;
-    text-transform: uppercase;
-    text-align: center;
+  text-rendering: optimizelegibility;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .banner {
-	background-color: #F43C12;
+	background-color: #AD85FF;
 	color: white;
 }
 
 .banner h1 {
 	color: white;
 }
+
+.colorScale {
+  list-style: none outside none;
+}
+
+.colorScale li {
+  margin-top: 4px;
+}
+
+.colorScale p, .colorScale span {
+  color: white;
+  font-size:100%;
+  font-style: italic;
+}
+
+.colorScale a {
+  font-size:150%;
+  color: white;
+}
+
+.colorScale li:nth-child(1) {    background: #795DB2; }
+.colorScale li:nth-child(2) {    background: #9C78E6; }
+.colorScale li:nth-child(3) {    background: #B591FF; }
+.colorScale li:nth-child(4) {    background: #C6AAFF; }
+.colorScale li:nth-child(5) {    background: #D6C2FF; }
+.colorScale li:nth-child(6) {    background: #E6DAFF; }
+.colorScale li:nth-child(7) {    background: #F7F3FF; }
+
+
 
 /* stuff for the footer */
 

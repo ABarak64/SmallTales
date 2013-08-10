@@ -42,7 +42,7 @@
   }
 
   #nav a {
-      background: none repeat scroll 0 0 #F43C12;
+      background: none repeat scroll 0 0 #AD85FF;
       border-bottom: 1px solid white;
       float: left;
       font-size: 112.5%;
@@ -57,13 +57,13 @@
 
   #nav-toggle {
     -moz-user-select: none;
-    background: url("../images/toggler.gif") no-repeat scroll 50% 33% #F43C12;
+    background: url("../images/toggler2.gif") no-repeat scroll 50% 33% #AD85FF;
     display: block;
-    /*float: right;*/
-    height: 55px;
+    /*height: 55px;*/
+    padding-top: 35px;
     overflow: hidden;
     text-indent: -9999px;
-    width: 70px;
+    width: 50px;
   }
 }
 
