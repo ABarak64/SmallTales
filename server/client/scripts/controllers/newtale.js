@@ -5,7 +5,7 @@ app.controller('NewTaleCtrl', function ($scope, $location, Tales) {
   $scope.tale = {
     title: '',
     text: '',
-    isNewParagraph: true
+    isNewParagraph: false
   };
 
   $scope.create = function() {

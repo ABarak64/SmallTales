@@ -1,6 +1,9 @@
-<h2>{{tale.title}}</h2>
+<h3>{{tale.title}}</h3>
 <br/>
-<span ng-repeat="phrase in tale.phrases">{{phrase.text}} </span>
+<span ng-repeat="phrase in tale.phrases">
+  <br ng-show="phrase.isNewParagraph"><br ng-show="phrase.isNewParagraph">
+  {{phrase.text}} 
+</span>
 <br/>
 <br/>
 <form name="updateTaleForm">

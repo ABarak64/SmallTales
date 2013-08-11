@@ -21,7 +21,7 @@ module.exports = function(app){
 
   // Make a new tale.
   app.post('/tales', function(req, res) {
-    talesManager.addTale({ title: req.body.title, text: req.body.text, isNewParagraph: true }, function(data) {
+    talesManager.addTale({ title: req.body.title, text: req.body.text, isNewParagraph: req.body.isNewParagraph }, function(data) {
       res.send(data);
     });
   });

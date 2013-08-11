@@ -8,6 +8,10 @@
     font-size: 200%;
   }
 
+  h3 {
+    font-size:150%;
+  }
+
   p, span {
     font-size: 14px;
     line-height: 18px;
@@ -20,6 +24,10 @@
   #nav a {
     font-size: 80%;
   }
+
+  .taleSummary p, .taleSummary span {
+    line-height: 20px;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -29,7 +37,11 @@
   }
 
   h2 {
-    font-size: 250%;
+    font-size: 200%;
+  }
+
+  h3 {
+    font-size:250%;
   }
 
   p, span {
@@ -44,6 +56,10 @@
   #nav a {
     font-size: 80%;
   }
+
+  .taleSummary p, .taleSummary span {
+    line-height: 20px;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -55,6 +71,10 @@
 
   h2 {
     font-size: 280%;
+  }
+
+  h3 {
+    font-size:250%;
   }
 
   p, span {
@@ -70,6 +90,10 @@
     font-size: 100%;
   }
 
+  .taleSummary p, .taleSummary span {
+    line-height: 30px;
+  }
+
 }
 
 @media only screen and (min-width: 1025px) {
@@ -80,6 +104,10 @@
 
   h2 {
     font-size: 350%;
+  }
+
+  h3 {
+    font-size:250%;
   }
 
   p, span {
@@ -93,6 +121,10 @@
 
   #nav a {
     font-size: 110%;
+  }
+
+  .taleSummary p, .taleSummary span {
+    line-height: 30px;
   }
 }
 
@@ -131,6 +163,14 @@ h1, h2 {
   text-align: center;
 }
 
+h3 {
+  font-family: "Georgia";
+  color: #37302A;
+  text-rendering: optimizelegibility;
+  text-align: center;
+  font-weight: bold;
+}
+
 .banner {
 	background-color: #AD85FF;
 	color: white;
@@ -140,21 +180,31 @@ h1, h2 {
 	color: white;
 }
 
-.colorScale {
+.taleSummary {
   list-style: none outside none;
 }
 
-.colorScale li {
+.taleSummary li {
+  background-color: #AD85FF;
+  cursor: pointer;
   margin-top: 4px;
+  padding-top: 10px;
+  margin-right: 20px;
+  min-width: 250px;
 }
 
-.colorScale p, .colorScale span {
+.taleSummary p, .taleSummary span {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.taleSummary span {
   color: white;
   font-size:100%;
   font-style: italic;
 }
 
-.colorScale a {
+.taleSummary p {
   font-size:150%;
   color: white;
 }
@@ -187,6 +237,10 @@ html, body {
 }
 
 /* Keep bootstrap fluid stuff at full width. */
+
+.bootstrap-diff-margin {
+  margin-top: 30px;
+}
 
 .container-fluid {
     padding: 0px;
