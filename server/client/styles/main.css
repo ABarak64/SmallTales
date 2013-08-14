@@ -28,6 +28,10 @@
   .taleSummary p, .taleSummary span {
     line-height: 20px;
   }
+
+  .banner p {
+    font-size: 90%;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -59,6 +63,10 @@
 
   .taleSummary p, .taleSummary span {
     line-height: 20px;
+  }
+
+  .banner p {
+    font-size: 135%;
   }
 }
 
@@ -94,6 +102,10 @@
     line-height: 30px;
   }
 
+  .banner p {
+    font-size: 155%;
+  }
+
 }
 
 @media only screen and (min-width: 1025px) {
@@ -126,9 +138,21 @@
   .taleSummary p, .taleSummary span {
     line-height: 30px;
   }
+
+  .banner p {
+    font-size: 200%;
+  }
 }
 
 /* regardless of window size */
+
+.banner p {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 0px;
+  letter-spacing: 0.35em;
+}
 
 #footer {
   background-color: #AD85FF;
@@ -148,6 +172,7 @@ p, span {
 
 h1 {
   line-height: 0;
+  margin-bottom: 0.45em;
 }
 
 h2 {
