@@ -32,6 +32,10 @@
   .banner p {
     font-size: 90%;
   }
+
+  .main a {
+    font-size: 140%;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -67,6 +71,10 @@
 
   .banner p {
     font-size: 135%;
+  }
+
+  .main a {
+    font-size: 170%;
   }
 }
 
@@ -106,6 +114,10 @@
     font-size: 155%;
   }
 
+  .main a {
+    font-size: 220%;
+  }
+
 }
 
 @media only screen and (min-width: 1025px) {
@@ -142,6 +154,10 @@
   .banner p {
     font-size: 200%;
   }
+
+  .main a {
+    font-size: 290%;
+  }
 }
 
 /* regardless of window size */
@@ -158,11 +174,31 @@
   background-color: #AD85FF;
 }
 
+#footer a {
+  color: white;
+}
+
 #footer p {
   color: white;
   text-align: center;
   line-height: 20px;
   padding-top:10px;
+}
+
+.intro p {
+  color: #AD85FF;
+  font-family: 'Segoe UI Semibold','Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+}
+
+.main a {
+  color: #AD85FF;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: block;
+  font-family: 'Segoe UI Semibold','Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.9em;
 }
 
 p, span {
@@ -193,7 +229,7 @@ h3 {
   color: #37302A;
   text-rendering: optimizelegibility;
   text-align: center;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .banner {
