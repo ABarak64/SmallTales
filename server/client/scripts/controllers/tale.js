@@ -1,13 +1,19 @@
 'use strict';
 
-app.controller('TaleCtrl', function ($scope, $routeParams, Tales) {
+app.controller('TaleCtrl', function ($scope, $rootScope, $routeParams, Tales) {
 
-  $scope.tale = Tales.get({ taleId: $routeParams.taleId });
+  $rootScope.loading = true;
+  $scope.tale = Tales.get({ taleId: $routeParams.taleId }, function(result) {
+    $rootScope.loading = false;
+  });
   $scope.newPhrase = {
   	isNewParagraph: false
   };
 
   $scope.add = function() {
-    $scope.tale = Tales.update({ taleId: $scope.tale._id }, $scope.newPhrase);
+  	$rootScope.loading = true;
+    $scope.tale = Tales.update({ taleId: $scope.tale._id }, $scope.newPhrase, function(result) {
+    	$rootScope.loading = false;
+    });
   };
 });

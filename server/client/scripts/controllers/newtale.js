@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NewTaleCtrl', function ($scope, $location, Tales) {
+app.controller('NewTaleCtrl', function ($scope, $rootScope, $location, Tales) {
 
   $scope.tale = {
     title: '',
@@ -9,6 +9,7 @@ app.controller('NewTaleCtrl', function ($scope, $location, Tales) {
   };
 
   $scope.create = function() {
+    $rootScope.loading = true;
     $scope.tale = Tales.save($scope.tale);
     $location.path('/tales');
   };
