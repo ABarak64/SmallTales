@@ -316,8 +316,6 @@ h3 {
   bottom:0px;
   left:0px;
   right:0px;
-  background: white;
-  opacity: 0.7;
   display: block;
   z-index: 1001;
 }
@@ -337,6 +335,34 @@ html, body {
 
 #push, #footer {
     height: 40px;
+}
+
+/* stuff for message banner */
+
+.message {
+  display: none;
+  position:fixed;
+  top: 20px;
+  width: 60%;
+  left: 20%;
+  text-align: center;
+}
+
+.message .success {
+  border-color: lightgreen;
+}
+
+.message .failure {
+  border-color: red;
+}
+
+.message span {
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #AD85FF;
+  padding: 3px;
+  display: inline-block;
 }
 
 /* Keep bootstrap fluid stuff at full width. */

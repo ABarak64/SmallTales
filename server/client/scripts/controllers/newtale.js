@@ -12,5 +12,10 @@ app.controller('NewTaleCtrl', function ($scope, $rootScope, $location, Tales) {
     $rootScope.loading = true;
     $scope.tale = Tales.save($scope.tale);
     $location.path('/tales');
+
+    $rootScope.message = {
+      text: 'You successfully created the \'' + $scope.tale.title + '\' tale.',
+      success: true
+    };
   };
 });

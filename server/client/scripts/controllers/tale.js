@@ -7,13 +7,17 @@ app.controller('TaleCtrl', function ($scope, $rootScope, $routeParams, Tales) {
     $rootScope.loading = false;
   });
   $scope.newPhrase = {
-  	isNewParagraph: false
+    isNewParagraph: false
   };
 
   $scope.add = function() {
-  	$rootScope.loading = true;
+    $rootScope.loading = true;
     $scope.tale = Tales.update({ taleId: $scope.tale._id }, $scope.newPhrase, function(result) {
-    	$rootScope.loading = false;
+      $rootScope.loading = false;
+      $rootScope.message = {
+        text: 'You successfully added a phrase to the \'' + $scope.tale.title + '\' tale.',
+        success: true
+      };
     });
   };
 });
