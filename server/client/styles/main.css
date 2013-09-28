@@ -191,19 +191,15 @@
 }
 
 .main a {
-  color: #AD85FF;
+  color: white;
   font-family: 'Segoe UI Semibold','Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
   text-transform: uppercase;
   text-align: center;
   line-height: 0.9em;
-  transition: color 1s;
-  -moz-transition: color 1s; /* Firefox 4 */
-  -webkit-transition: color 1s; /* Safari and Chrome */
-  -o-transition: color 1s; /* Opera */
 }
 
 .main a:hover {
-  color: white;
+  color: #AD85FF;
   text-decoration: none;
 }
 
@@ -211,15 +207,11 @@
   padding-top:0.7em;
   padding-bottom: 0.7em;
   display: block;
-  background: white;
-  transition: background 1s;
-  -moz-transition: background 1s; /* Firefox 4 */
-  -webkit-transition: background 1s; /* Safari and Chrome */
-  -o-transition: background 1s; /* Opera */
+  background: #AD85FF;
 }
 
 .main div:hover {
-    background: #AD85FF;
+    background: white;
 }
 
 p, span {
